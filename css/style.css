@@ -1,0 +1,77 @@
+
+/* 
+syntax
+ 
+selector{
+    property:value;
+}
+
+selector - element or tag ,id,class
+
+combination of selectors -
+syntax : 
+    selector1 space selector2{
+    property:value;
+    }
+    
+*/
+
+h1{
+    color: darkolivegreen;
+    /* color: rgba(250, 0, 0,0.1);  max 255 and min 0 , a is for opacity which has max 1 and min 0*/
+    font-size: 50px;
+}
+
+body{
+   background-color: initial;
+   color: rgb(25, 125, 37);
+}
+a{
+    text-decoration: none;       /* reset css - removes text line  */
+    color: inherit;   /*  it inherits parents color.. parents here is <li> */
+}
+ul{
+    list-style-type: none;  /* removes the dots from list */
+}
+header li{    /* combination selector eg */
+    display: inline;   /* converting block element of li to inline element.  
+                       Inline takes only required width and continues in same 
+                       line but block element to entire width and starts in new line.
+                        height and width cannot be setup for inline element. */
+   
+   margin: 20px;                  
+}
+/* #about{   // selector id=about
+    font-weight: bold;
+} */
+.bold{   /* selector class=active */
+    font-weight: bold;
+    color: brown;
+}
+/* 
+underlining each individual id is not good but instead we use a class to
+give line to all. 
+#google{
+    text-decoration: underline;
+}
+#youtube{
+    text-decoration: underline;
+} 
+*/
+.underline{
+text-decoration: underline;
+}
+.inactive{
+    color: grey;
+    /* cursor:no-drop; */
+    pointer-events: none;  
+}
+#home{
+    margin-left: 0;
+}
+footer div{
+    display: inline-block; /* inline  with block  features */
+}
+footer nav{
+    display: inline-block;
+}

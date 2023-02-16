@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+
+
+        /* reset css */
+
+         *{ /* universal selector*/
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* padding and border will be within specified width. 
+                    If this line is not written then padding, border will be outside the specified width */
+         }
+
+         a{
+            text-decoration: none;
+            color: inherit;
+         }
+         ul{
+            list-style-type: none;
+         }
+
+         /* reset-end*/
+
+        .box{
+            border: 20px solid rgb(5, 4, 5);
+            height: 200px;
+            width: 375px;
+            padding: 20px; /* space between content and container */
+            /* margin: 50px;  space between container and screen */
+        }
+        .parent{
+            width: 400px;
+            height: 600px;
+            margin: 10px;
+            border: 1px solid rgb(212, 14, 14);
+            background-color: palevioletred;
+        }
+        .child{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid black;
+            display: inline-block; /* inline with block features */
+            background-color: bisque;
+        }
+        .child2{
+            width: 133.33px;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid black;
+            display: inline-block;
+            background-color: palegreen;
+        }
+        .child3{
+            height: 200px;
+            width: 100px;
+            padding: 10px;
+            border: 1px solid black;
+            display: inline-block;
+            background-color: lightslategray;
+        }
+        main{
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li id="home"><a href="./index.html">Home</a></li>
+                <li><a href="./Html/about.html">About us</a></li>
+                <li> <a href="./contact.html">Contact us</a></li>
+                <li><a href="./Html/faq.html">FAQ</a></li>
+                <li><a href="./Html/blogs.html">Blogs</a></li>
+                <li><a href="./box-model.html" class="bold">Box model</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+    <h1>Box model</h1>
+</main>
+    <!-- <div class="box">
+        Loren ipsum
+    </div> -->
+    <div class="parent">
+        <div class="child" style="margin-right: -3px;">child2</div>
+        <div class="child" style="margin: -3px;">child2</div>
+        <div class="child2" style="margin-right: -2.5px;">child3</div>
+        <div class="child2" style="margin: -2.5px;">child3</div>
+        <div class="child2" style="margin: -2.5px;">child3</div>
+<div class="child3" style="margin-right: -2.35px;">child4</div>
+<div class="child3" style="margin: -2.35px;">child4</div>
+<div class="child3" style="margin: -2.35px;">child4</div>
+<div class="child3" style="margin-left: -2.35px;">child4</div>
+    </div>
+</body>
+
+</html>
