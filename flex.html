@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent,.box{
+            background-color: rgb(138, 220, 220);
+            height: 500px;
+            width:600px;
+            display: flex;  /* instead of inline use of flex  since it makes task much easier. */
+            /*   justify-content: space-between;   horizontal shift.    end and flex-end is same thing */
+            /* align-items: center;   vertical shift */
+            /* align-content: center; to remove vertical gap */
+            flex-wrap: wrap;  /* by-default it is nowrap that squeez all the contents in one line not maintaining the actual size. */
+            gap: 10px;  /* space between child. */
+            flex-direction: column;  /* after this justify-content and align-items swaps too..ie justify-content works for vertical shift and align-items works for horizontal shift */
+        }
+        .child,.box-child{
+            height: 20%;
+            width: 20%;
+            background-color: rgb(228, 153, 223);
+            border: 1px solid;
+            box-shadow: 40px 30px 25px;  /* x y shadow   Q: how to change shadow color?? */  
+            border-radius: 15px;
+            
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi delectus officiis deleniti error placeat perspiciatis fuga ullam nemo distinctio aperiam, voluptates quo inventore eum assumenda minus! Ipsum doloremque libero accusantium.</p>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur atque minima quibusdam deserunt suscipit earum ducimus fugit nostrum? Itaque id doloribus debitis cum mollitia hic corrupti est excepturi. Repellendus, sed.</p>
+    <div class="box">
+        <div class="box-child" style="flex-grow: 1"></div>  
+        <!-- flex-grow occupy the remaining spaces equally maintaining the gap. -->
+        <div class="box-child" style="flex-grow: 1;"></div>
+        <div class="box-child"></div>
+        <div class="box-child" style="align-self: end;"></div>  
+        <!-- align-self is for individual child. It doesn't works if we use align-content in parents.. no idea why?? -->
+    </div>
+</body>
+</html>

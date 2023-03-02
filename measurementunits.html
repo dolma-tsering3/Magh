@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --font-size: 32px;
+            --primary-color:rgb(4, 97, 44);
+            --secondary-color:rgb(214, 38, 164);
+        }
+        html{  /* global or root value */
+            font-size: var(--font-size);
+        }
+        body {
+            /* font-size: 32px; default size is 16px */
+            
+        }
+
+        .box {
+            height: 50vw; /* full view width gives some overflow so full is usually avoided */
+            width: 100vh;  /* full view height doesn't have an overflow.. it takes full device height.*/
+            background-color: antiquewhite;
+        }
+
+        .child {
+            display: inline-block;
+            border: 1px solid;
+            height: 50%;  /* 50% of parents' height.*/
+            width: 50%;
+            background-color: darkgoldenrod;
+            /* padding: 1em; /* 1em = nearest parents font-size  */
+            /* padding: 1rem; 1rem = root font-size */ 
+           
+         }
+         .button{
+            background-color: var(--secondary-color);
+            width: 10%;
+            height: 5%;
+            color: white;
+            margin-top: 5%;
+         }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rem accusamus nulla
+        harum culpa repellendus molestiae, sed quod deserunt saepe facere dolore quas
+        obcaecati odio tempora, voluptas, tempore ea cupiditate.</p>
+
+        <div class="button">click</div>
+
+    <div class="box">  <!-- space between div box is 1/4 of font-size  -->
+        <div class="child"  style="padding: 10px;">children</div>  
+<!-- Q : if text is not written in one of the child then these child then margin-left doesn't make them stay in one line??-->
+        <div class="child" style="margin-left: calc(var(--font-size)/(-4));">child</div>
+    </div>
+</body>
+
+</html>
