@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         /* In CSS class is more used than id. */
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+       /* descendent selector : space between class is required */
+       /* .big-box .child { 
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        } */
+
+        /* direct selector : applied to only direct child and not to its nested child. */
+       .big-box>.child { 
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        }
+        .small-box .child {
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+        }
+        .mb{
+            margin-bottom: 20px;
+        }
+        .inline{
+            display: inline;
+        }
+        /* AND selector : no space between classes. order doesn't matter. this selector has features opposite to descendent selector. */
+        .first.inline{
+           color: purple;
+        }
+
+        /* OR SELECTOR : combines selectors using comma in between. */
+        .first.inline , .small-box .first{  /* eg. and selector and descendent selector combined by or selector using comma.*/
+            background-color: aqua;
+        }
+        /* Attribute Selector */
+        [type=password]{
+            background-color: rgb(104, 150, 104);
+        }
+        /* pseudo element - it uses two colons. */
+       label::after{  /* we also have - after*/
+             content: "*";
+             color: rgb(194, 16, 16);
+       }
+    </style>
+</head>
+
+<body>
+   
+    <h1 class="mb">Selector</h1>
+    <h2 class="mb">Big-box</h2>
+    <div class="big-box first-level">
+        <div class="second-level">
+            <div class="child">Third-level</div>
+        </div>
+        <div class="child first mb"></div> <!-- multiple classes in one element. -->
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+    <h2 class="mb">Small-box</h2>
+    <div class="small-box">
+        <div class="child first mb"></div> <!-- multiple classes in one element. -->
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <ul>
+        <li class="first inline">index</li>
+        <li class="second inline">contact</li>
+    </ul>
+    <hr>
+    <ul>
+        <li class="first">index</li>
+        <li class="second">contact</li>
+    </ul>
+    <hr>
+    <ul>
+        <li class="inline">index</li>
+        <li class="inline">contact</li>
+    </ul>
+    <hr>
+    <form action="">
+       <label for="">Fname</label>
+        <input type="text"/>
+        <label for="">Lname</label>
+        <input type="text"/>
+        <br>
+        <label for="">Password</label>
+        <input type="password"/>
+     </form>
+</body>
+
+</html>
