@@ -9,66 +9,74 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <style>
-
-
         /* reset css */
 
-         *{ /* universal selector*/
+        * {
+            /* universal selector*/
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* padding and border will be within specified width. 
+            box-sizing: border-box;
+            /* padding and border will be within specified width. 
                     If this line is not written then padding, border will be outside the specified width */
-         }
+        }
 
-         a{
+        a {
             text-decoration: none;
             color: inherit;
-         }
-         ul{
+        }
+
+        ul {
             list-style-type: none;
-         }
+        }
 
-         /* reset-end*/
+        /* reset-end*/
 
-        .box{
+        .box {
             border: 20px solid rgb(5, 4, 5);
             height: 200px;
             width: 375px;
-            padding: 20px; /* space between content and container */
+            padding: 20px;
+            /* space between content and container */
             /* margin: 50px;  space between container and screen */
         }
-        .parent{
+
+        .parent {
             width: 400px;
             height: 600px;
-            margin: 10px;
+            margin: 50px;
             border: 1px solid rgb(212, 14, 14);
             background-color: palevioletred;
         }
-        .child{
-            width: 200px;
+
+        .child {
+            width: 50%;
             height: 200px;
-            padding: 10px;
-            border: 1px solid black;
-            display: inline-block; /* inline with block features */
+            border: 1px solid blue;
+            display: inline-block;
+            /* inline with block features */
             background-color: bisque;
+            padding: 45px;
         }
-        .child2{
-            width: 133.33px;
+
+        .child2 {
+            width: 33.33%;
             height: 200px;
-            padding: 10px;
             border: 1px solid black;
             display: inline-block;
             background-color: palegreen;
+            padding: 45px;
         }
-        .child3{
+
+        .child3 {
             height: 200px;
-            width: 100px;
-            padding: 10px;
-            border: 1px solid black;
+            width: 25%;
+           border: 1px solid black;
             display: inline-block;
             background-color: lightslategray;
+            padding: 45px;
         }
-        main{
+
+        main {
             margin-top: 16px;
         }
     </style>
@@ -89,21 +97,21 @@
     </header>
     <hr>
     <main>
-    <h1>Box model</h1>
-</main>
+        <h1>Box model</h1>
+    </main>
     <!-- <div class="box">
         Loren ipsum
     </div> -->
     <div class="parent">
-        <div class="child" style="margin-right: -3px;">child2</div>
-        <div class="child" style="margin: -3px;">child2</div>
-        <div class="child2" style="margin-right: -2.5px;">child3</div>
-        <div class="child2" style="margin: -2.5px;">child3</div>
-        <div class="child2" style="margin: -2.5px;">child3</div>
-<div class="child3" style="margin-right: -2.35px;">child4</div>
-<div class="child3" style="margin: -2.35px;">child4</div>
-<div class="child3" style="margin: -2.35px;">child4</div>
-<div class="child3" style="margin-left: -2.35px;">child4</div>
+        <div class="child" style="margin-right: -4px;">child2</div>  <!-- space between div is 1/4 of font-size... -->
+        <div class="child" >child2</div>
+        <div class="child2">child3</div>
+        <div class="child2" style="margin-left: -4px;">child3</div>
+        <div class="child2" style="margin-left: -4px;">child3</div>
+        <div class="child3">child4</div>
+        <div class="child3" style="margin-left: -4px;">child4</div>
+        <div class="child3" style="margin-left: -4px;">child4</div>
+        <div class="child3" style="margin-left: -4px;">child4</div>
     </div>
 </body>
 
