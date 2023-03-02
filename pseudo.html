@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {}
+
+        .child {
+            height: 100px;
+            width: 100px;
+            border: 1px solid;
+        }
+        /* .box .child:first-child{    box bitra ko child that is first-child.Also we have last-child and nth-child(number) 
+            background-color: blue;
+        } */
+        /* .box .child:nth-child(3){   number=2n for even
+            background-color: bisque;
+        } */
+        /* .box .child:nth-child(2n){
+            background-color: lightgreen;
+        } */
+      
+
+        /* Pseudo Classes : focus,hover,not */
+        button:focus{  /*focus is when mouse is clicked.*/
+            background-color: aquamarine;  
+        }
+        a:hover{
+            color: fuchsia;
+        }
+        .box .child:not(:first-child){  
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <ul class="box">
+        <li class="first">one</li>
+        <li>one</li>
+    </ul>
+      <hr>
+      <a href="./index.html">Index</a>
+      <a href="./selector.html">Selector</a>
+      <hr>
+    <form action="">
+        <input type="text">
+        <button>submit</button>
+     </form>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .box{
+            background-color: cadetblue;
+        }
+        .child{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: bisque;
+        }
+        .relative{
+            position: relative;
+            left: 300px;
+        }
+        .fixed{
+            position: fixed;
+           left: 70%;
+           top: 20%;
+         }
+        .absolute{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            top: 0px;
+            right: 0px;
+        }
+        .sticky{
+            position: sticky;
+            left:80%;
+            top: 10%;
+        }
+        .modal{
+            height: 200px;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: mintcream;
+            margin-top: 10px;
+            padding-left: 100px;
+        }
+        .modal-wrapper{
+            height: 100vh;
+            background-color: rgba(0,0, 0, 0.5);
+            overflow: hidden;   /* when child goes out of parents boundaries then the 'overflow : hidden' will hides the overflows */
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum dolor ur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque
+        cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate 
+        Lorem ipsum dolor sit, amet consectetur adipisicing ur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque
+        cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate 
+        Lorem ipsum dolor sit, amet consectetur adipisicing ur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum driosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.sit aspernatur.</p>
+    </p>
+
+    
+   
+    <div class="box">
+        
+        <div class="child relative">shifted left relative to original position</div>
+        <div class="child fixed"> Welcome fixed</div>
+         <div class="child static">static</div>
+        <div class="child absolute"><img src="./trolleyicon.jpg" alt="" height="40px" width="40px"></div>
+        <div class="child sticky">sticky</div>
+    </div>
+     <div class="modal-wrapper">
+      <div class="modal">
+        <h1>Modal</h1>
+        <button>Save changes.</button>
+    </div>
+    </div>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque
+        cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque
+        cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate 
+        Lorem ipsum dolor sit, amet consectetur adipisicing eli amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque
+        cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate 
+        Lorem ipsum dolor sit, amet consectetur adipisicing eli amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque
+        cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate 
+        Lorem ipsum dolor sit, amet consectetur adipisicing eli amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque
+        cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate 
+        Lorem ipsum dolor sit, amet consectetur adipisicing eli amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.Lorem
+         ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus 
+        atque cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque
+        cupiditate sit aspernatur.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate 
+        Lorem ipsum dolor sit, amet consectetur adipisicing eli amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, autem molestias. Laboriosam expedita accusamus aut, blanditiis ipsa ullam nesciunt, repudiandae vel, facere velit voluptatem. Maxime delectus atque cupiditate sit aspernatur.sit aspernatur.</p>
+    </p>
+</body>
+</html>
