@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Adding bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    div:first-child img {
+      /* display: none;  hidden and its original place is not maintained. */
+      /* visibility: hidden;  hidden and its original place is maintained. */
+    }
+
+    .card img {
+      height: 100px;
+      width: 150px;
+    }
+  </style>
+</head>
+<!-- bootstrap makes device responsive easier and we donot have to use @mediaquery. -->
+<body class="container">
+  <form>
+    <div class="row">
+    <div class="mb-3 mb-3 col-sm-6 col-md-4 col-xl-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3 mb-3 col-sm-6 col-md-4 col-xl-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 mb-3 col-sm-6 col-md-4 col-xl-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 mb-3 col-sm-6 col-md-4 col-xl-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 mb-3 col-sm-6 col-md-4 col-xl-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 mb-3 col-sm-6 col-md-4 col-xl-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 mb-3 col-sm-6 col-md-4 col-xl-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <h1>Projects</h1>
+  <hr>
+  <div class="row"> <!-- row has property of d-flex and flex-wrap: wrap -->
+    <!-- col-1 class has 12 columns while col class puts all columns in single line -->
+    <div class="col-1 border">col</div> <!-- col has flex-grow property. -->
+    <div class="col-2 border">col</div>
+    <div class="col-sm-6 col-md-4 border">col</div> <!-- col-sm-6 col-md-4 takes 3 columns. i.e. width=3*100/12 % -->
+    <div class="col-1 border ">col</div> <!-- width=100/12 % -->
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+    <div class="col-1 border ">col</div>
+  </div>
+
+
+  <div class="projects text-center row">
+
+    <!-- copied from bootstrap card. -->
+    <div class="card p-5 col-sm-6 col-md-4 col-xl-3 border-secondary"> <!-- p-5 means padding 5*0.25rem or 20px -->
+      <img src="./git.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Git</h5>
+        <p class="card-text text-secondary">Secondary : quick example text to build on the card title and make up the
+          bulk of
+          the card's content.</p>
+        <a href="#" class="btn btn-secondary">secondary</a>
+      </div>
+    </div>
+    <!-- col-sm-6 means take 2 columns in a row or min-width:576px in mediaquery. -->
+    <!-- ccol-md-4 means take 3 columns in a row or min-width:768px in mediaquery-->
+    <div class="card mt-1 col-sm-6 col-md-4 col-xl-3 border-success">
+      <!-- mt-1 means margin-top 0.25rem or 4px and value can be from 1 to 5 -->
+      <img src="./git.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Git</h5> <!-- text-danger class will make the font-color red.-->
+        <p class="card-text text-success">Success : quick example text to build on the card title and make up the bulk
+          of the card's
+          content.</p>
+        <a href="#" class="btn btn-success">success</a>
+      </div>
+    </div>
+    <div class="card border-primary col-sm-6 col-md-4 col-xl-3">
+      <img src="./git.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Git</h5>
+        <p class="card-text text-primary">Primary : quick example text to build on the card title and make up the bulk
+          of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">primary</a>
+      </div>
+    </div>
+    <div class="card border-danger col-sm-6 col-md-4 col-xl-3">
+      <img src="./git.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Git</h5>
+        <p class="card-text text-danger">Danger : quick example text to build on the card title and make up the bulk of
+          the card's
+          content.</p>
+        <a href="#" class="btn btn-danger">danger</a>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

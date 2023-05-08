@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- linking html to js -->
+  <!-- <script src="./index.js" defer></script>  -->
+
+  <style>
+
+      /* cannot give space in between body and its class */
+      body.dark{   /* AND selector */
+        background-color: black;
+        color: white;
+      }
+
+     .dark #darkBtn{
+        display: none;
+     }
+    
+
+       /* inside body if it is not dark(means its light) then don't display light button */
+       /* body:not(.dark) #lightBtn{ 
+        display: none;
+     } */
+     /* above one step can also be done as below with two steps */
+     #lightBtn{
+        display: none;
+     }
+     /* dark class ma lightBtn dekhaune */
+     .dark #lightBtn{
+        display: initial;
+     }
+
+
+    
+
+  </style>
+</head>
+<body class=""> 
+
+    <!-- <button id="darkBtn">dark</button>
+    <button id="lightBtn">light</button> -->
+  
+    <button id="toggleBtn">darkB</button>
+  
+   <p id="">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ipsum odit fugit voluptate! Rem excepturi neque amet dolorem, eum aperiam. Tenetur vero repellendus recusandae beatae ullam laborum soluta unde facilis?
+   </p>
+   <p class="">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ipsum odit fugit voluptate! Rem excepturi neque amet dolorem, eum aperiam. Tenetur vero repellendus recusandae beatae ullam laborum soluta unde facilis?
+   </p>
+ <!-- linking html to js -->
+  <script src="./index.js"></script> 
+</body>
+</html>

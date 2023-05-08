@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Shopping List</h1>
+    
+    <form onsubmit="addNewShopping(event)">
+        <input type="text" name="name-input" placeholder="name">
+        <input type="number" name="number-input" placeholder="quantity">
+        <button type="submit">Add</button>
+    </form>
+    <table id="table">
+
+        <thead>
+            <tr>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+           <tr>
+              <td>
+
+              </td>
+           </tr>
+        </tbody>
+    </table>
+
+  <script>
+      nam = []
+      num = []
+    const addNewShopping = (event) => {
+          event.preventDefault();  // prevent default refresh of page
+          let name = event.target.name-input.value
+          let qty = event.target.number-input.value
+
+        if(name){
+        nam.push(name)
+        }
+       
+        if(qty){
+            num.push(qty)
+        }
+        addTable(name,qty)
+    }
+
+    function addTable(arr1,arr2){
+         nam.forEach(element => {
+            
+            
+         });
+    }
+
+  </script>
+
+</body>
+</html>

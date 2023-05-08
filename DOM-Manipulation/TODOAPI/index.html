@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap css link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- bootstrap js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+        <!-- axios link -->
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid;
+        }
+
+        thead th:first-child {
+            width: 300px
+        }
+    </style>
+</head>
+
+<body>
+    <pre>  DISPLAYS WHATEVER WE TYPE INSIDE pre tag.
+       TASK HERE : 
+        FETCHING(GET METHOD) DATA FROM API AND CREATING (POST METHOD) DATA IN API
+    </pre>
+    <!--  poop-up (copied from bootstrap modal v5)  -->
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <form onsubmit="updateTodo(event)"> <!-- onsubmit() generates event -->
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <form onsubmit="createTodo(event)">
+        <input placeholder="Title" name="title">
+        <input type="submit">
+    </form>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="todos-list">
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        function updateTodo(event){ // event returns everthing inside form
+            event.preventDefault()
+            // axios is better way of fetching and method calling
+            axios.put(`https://todo-api-sagartmg2.vercel.app/api/todos/${event.target._id.value}`,{   // in axios content-type will be in json format bydefault.
+                title: event.target.title.value,
+                status: event.target.status.value
+            }).then(res =>{
+                fetchTodo()
+            })
+          
+        }
+
+        // fetching data from api
+        function fetchTodo() {
+            fetch("https://todo-api-sagartmg2.vercel.app/api/todos/")
+                .then(response => {   // response is the data we get after fetching
+                    return response.json()
+                }).then(json => {
+                    let data = json.data
+                    let str = ""
+                    data.forEach(todo => {  // putting the data in table
+                        str += `
+                   <tr>
+                    <td>${todo.title}</td>  
+                    <td>${todo.status}</td>
+                    <td>
+                        <button onclick="editTodo('${todo._id}')" data-bs-toggle="modal" data-bs-target="#exampleModal">EDIT</button> 
+                        <button onclick="deleteTodo('${todo._id}')">DELETE</button></td>
+                  </tr>  
+                        `  // back-tick is applied for multi-line comments
+                        // we have title and status in our db.
+                        document.getElementById("todos-list").innerHTML = str
+                    })
+                })
+        }
+
+        function deleteTodo(id) {
+            fetch(`https://todo-api-sagartmg2.vercel.app/api/todos/${id}`, {
+                method: "DELETE"
+            }).then(res => {
+                fetchTodo()
+            })   // fetch is asynchronous function, it takes some time for we use dot then()
+        }
+
+        const editTodo = (id) => {
+         /* 
+           fetch(`https://todo-api-sagartmg2.vercel.app/api/todos/${id}`) // value in url after todos is called slugs. slugs are changeable and not fixed i.e. /todos/slugs 
+            .then(res => {
+               return res.json()
+            })
+            .then(json => {
+               let todo = json.data
+               document.getElementById("modal-body").innerHTML = `
+               <input type="text" class="form-control" value="${todo.title}">
+                       <select type="text" class="form-control mt-2">
+                        <option value="false" ${!todo.status ? "selected" : ""}>false</option>
+                        <option value="true" ${todo.status ? "selected" : ""}>true</option>  
+                       </select>
+               `
+               // selected points to that value.
+            })
+      */
+
+     // above can be done better using axios as below :
+            axios.get(`https://todo-api-sagartmg2.vercel.app/api/todos/${id}`)
+            .then(res =>{
+                let todo = res.data.data  // axios ma response will be in data bitra data.
+               document.getElementById("modal-body").innerHTML = `
+               <input type="text" name="_id" hidden class="form-control" value="${todo._id}">
+               <input type="text" name="title" class="form-control" value="${todo.title}">
+                       <select type="text" name="status" class="form-control mt-2">
+                        <option value="false" ${!todo.status ? "selected" : ""}>false</option>
+                        <option value="true" ${todo.status ? "selected" : ""}>true</option>  
+                       </select>
+               `
+            })
+        }
+
+        function createTodo(event) {
+            event.preventDefault()
+
+            // 1. send data to our api
+            // 2. fetch latest todo
+
+            fetchTodo()
+
+            // sending data to api
+            fetch("https://todo-api-sagartmg2.vercel.app/api/todos", {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: event.target.title.value
+                }),
+                headers: {
+                    "content-type": "application/json"  // bydefault it is in plain-text form.
+                }
+
+            }).then(res => { // after above task gets success 
+                fetchTodo()
+            })
+        }
+    </script>
+</body>
+
+</html>

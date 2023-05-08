@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport is device responsive.. html is set according to the device width. -->
+    <title>Document</title> <!-- browser ko title-->
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="title" content="">
+    <style>
+        body{
+            padding: 10px;
+           
+        }
+        span{
+           font-size: 4rem;
+            font-weight: bold;
+            color: rgb(12, 110, 5);
+        }
+      
+       
+       ul{
+        list-style: none;
+        display:flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+       }
+       header{
+        display: flex;
+        justify-content: space-between;
+       }
+       header div.active{
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color:rgba(0, 0, 0, 0.5);
+       }
+
+     header nav{
+       /* display: none; */
+       position: fixed;
+       background-color: blanchedalmond;
+       top: 0;
+       bottom: 0;
+       right: 0;
+       width: 30vw;  /* 30% of device width*/
+       padding: 10px;
+       transform: translateX(100%); /* hides the side-menu*/
+       transition: all 1s; /* all transition takes 1s. */
+       }
+      header nav.active{
+        transform: translateX(0%); /* if we have class="active" then the side menu is displayed. */
+        z-index: 1; /* come at the front page unblocked */
+     }
+     
+       header li.active{
+        background-color: rgb(164, 182, 177);
+        /* transform: rotate(30deg);   */
+        /* transform: scale(2); size increases with integer */
+       }
+       
+      @media(min-width :577px)
+       {
+        header  img{
+            display: none;
+        }
+       header nav {
+           position: relative;
+           
+        }
+       ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+       }
+      header nav p{
+            display: none;
+        }
+       }
+
+
+
+       .child{
+        height: 100px;
+        width: 100px;
+        border: 1px solid;
+       }
+       .child:hover{
+        transform: translate(2px,-3px); /*translate(x,y) this transform is instant.*/
+        /* this will transform as set */ 
+        background-color: blueviolet;
+       
+        transition: all 2s;  /* same thing */ /* transition-property: transform, background-color;  
+        transition-duration: 10s; */
+        
+        transition-delay: 0s; /* not used much*/
+        }
+
+
+         /* For animation */
+         
+         @keyframes glow{
+            0%{
+
+            }
+            50%{
+               color: chocolate;
+               transform: translatey(10%);
+            }
+            100%{
+                /* transform: translateX(200%); */
+            }
+         }
+
+       #logo{
+        animation-name: glow;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        /* animation-fill-mode:  backwards; */
+        animation-delay: 1s;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <span id="logo">Logo</span>
+        <nav id="navbar"> <!-- id is mainly for JS -->
+            <p id="cross">X</p>
+            <ul>
+                <li  id="list"><a href="#">Sign in</a></li>   
+                <li><a href="#">Sign out</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+        <div class="overlay" id="cover"></div>
+        <div id="menu">  <img src="./iconmonstr-menu-lined-48.png" alt=""/></div>
+    </header>
+
+    <main>
+        <div class="box">
+
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+        </div>
+    </main>
+
+    <!-- javaScript-->
+    <script>
+        document.getElementById("menu").addEventListener("click", () => {
+        document.getElementById("navbar").classList.add("active")
+        })
+        document.getElementById("cross").addEventListener("click", () => {
+            document.getElementById("navbar").classList.remove("active")
+        })
+        document.getElementById("list").addEventListener("click", () => {
+            document.getElementById("list").classList.add("active")
+        })
+        document.getElementById("menu").addEventListener("click", () => {
+            document.getElementById("cover").classList.add("active")
+        })
+        document.getElementById("cross").addEventListener("click", () => {
+            document.getElementById("cover").classList.remove("active")
+        })
+        document.getElementById("cover").addEventListener("click", () => {
+            document.getElementById("cover").classList.remove("active")
+        })
+        document.getElementById("cover").addEventListener("click", () => {
+            document.getElementById("navbar").classList.remove("active")
+        })
+    </script>
+</body>
+
+</html>

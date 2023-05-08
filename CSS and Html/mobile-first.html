@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .projects img{
+            height: 150px;
+           max-width: 100%;
+        }
+        .project{
+            border: 1px solid;
+            padding: 10px;
+            text-align: center;
+        } 
+        /* project bitra ko p */
+        .project p{
+            text-align: justify;
+        }
+        /* mobile-first approach : new style */
+        
+
+        @media(min-width:576px){  /* applied for 576 and above width. */
+            .projects{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .project{
+                width: 50%;
+            }
+        }
+
+        @media(min-width: 768px){
+            .project{
+                width: 33.33%;   /* to fit 3 project: 100divide3 gives 33.33%*/
+            }
+        }  
+            
+         
+        
+    </style>
+</head>
+<body>
+    <h1>Projects</h1>
+    <div class="projects">
+    <div class="project">
+        <img src="./git.png" alt=""/>
+        <h2>Git</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rem cumque. Optio sed delectus deleniti obcaecati, in beatae consectetur adipisicing elit. Explicabo, rem cumque. Optio sed delectus deleniti obcaecati, in beatae accusamusaccusamus tenetur. Dicta repellat deserunt quam magni, unde asperiores nobis cum commodi!</p>
+    </div>
+    <div class="project">
+        <img src="./node.jpeg" alt=""/>
+        <h2>Nodes</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rem cumque. Optio sed delectus deleniti obcaecati, in beatae accusamusconsectetur adipisicing elit. Explicabo, rem cumque. Optio sed delectus deleniti obcaecati, in beatae accusamus tenetur. Dicta repellat deserunt quam magni, unde asperiores nobis cum commodi!</p>
+    </div>
+    <div class="project">
+        <img src="./react.jpeg" alt=""/>
+        <h2>React</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rem cumque. Optio sed delectus deleniti obcaecati, in beatae accusamusconsectetur adipisicing elit. Explicabo, rem cumque. Optio sed delectus deleniti obcaecati, in beatae accusamus tenetur. Dicta repellat deserunt quam magni, unde asperiores nobis cum commodi!</p>
+    </div>
+</div>
+</body>
+</html>

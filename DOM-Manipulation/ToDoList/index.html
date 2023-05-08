@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./index.js" defer></script>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <hr>
+    <!-- bydefault onsubmit refresh our page and an event is generated-->
+    <form onsubmit="addNewToDo(event)"> 
+        <input id="task-name" name="task_name" placeholder="Name">
+        <button onclick="">Add</button>
+    </form>
+
+    <hr>
+    <ul id="todo-list">
+        <li>Learn CSS</li>
+        <li>Learn Html</li>
+    </ul>
+
+    <!-- <script>
+        const addNewToDo = (event) => {
+            event.preventDefault();  // default page referesh gets prevented by this line 
+            console.log("add new");
+
+
+            let new_list = document.createElement("li"); // <li></li>
+            let task_name = document.getElementById("task-name").value
+            new_list.innerText = task_name
+            document.getElementById("todo-list").appendChild(new_list)
+             document.getElementById("task-name").value = ""   // removes value from the input filed.
+            return;
+        }
+    </script> -->
+
+    <script>
+        // above can be simplified as below
+        const addNewToDo = (event) => {
+            event.preventDefault();
+            if(event.target.task_name.value != "") {
+
+            let new_list = document.createElement("li");  // <li></li>
+        
+            new_list.innerText = event.target.task_name.value  // points to the value in input-field
+            
+            document.getElementById("todo-list").appendChild(new_list) // adding in ul list
+
+            event.target.task_name.value = "" // deleting value in input-field
+            }
+
+            // another way of adding value in list
+           // document.getElementById("todo-list").innerHTML = "<li>react</li> <li>js<button>delete</button</li>"
+
+        }
+    </script>
+</body>
+
+</html>

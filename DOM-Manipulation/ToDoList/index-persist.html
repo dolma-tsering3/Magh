@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- better way than what we did in index.html -->
+    <h1>Todo List</h1>
+    <hr>
+    <!-- bydefault onsubmit refresh our page and an event is generated-->
+    <form onsubmit="addNewToDo(event)">
+        <input id="input-name" name="input_name" placeholder="Name">
+        <button onclick="">Add</button>
+    </form>
+
+    <hr>
+    <ul id="todos-ul">
+    </ul>
+
+    <script>
+        let todos = []
+
+        // to retrive stored value from local storage to the list : so after we refresh the page, value will remain there.
+        let persisted_todos = localStorage.getItem("todos")
+        if (persisted_todos) {
+            todos = JSON.parse(persisted_todos) // parse() works opposite of stringify i.e converts string value to array
+            convertTodoToList(todos)
+        }
+
+        // adding new value from the input field to the list
+        const addNewToDo = (event) => {
+            event.preventDefault();
+            let todo_title = event.target.input_name.value 
+
+            if (todo_title) { // if there is value
+                todos.push(todo_title)
+                convertTodoToList(todos)
+            }
+        }
+
+        // array converted to list and stored in local storage
+        function convertTodoToList(arr) {
+            let str = ``
+            arr.forEach((todo,index) => {
+                str += `<li>${todo}<button onclick="deleteToDo('${index}')">delete</button></li>`
+            })
+            document.getElementById("todos-ul").innerHTML = str
+
+            localStorage.setItem("todos", JSON.stringify(todos)) // setItems(key,value) 
+            // stringify(todos) will store arrays as string (array to string) in localStorage
+        }
+
+        // to delete from list
+        function deleteToDo(val) {
+           todos = todos.filter((element,index) => {
+            if(index != val){
+                 return true ;  // return value if the indexes is not diff else don;t return.
+            }
+           })
+
+           console.log(todos)
+           convertTodoToList(todos)
+        }
+
+    </script>
+</body>
+
+</html>

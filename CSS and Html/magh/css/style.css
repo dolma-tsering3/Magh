@@ -1,0 +1,14 @@
+/* 
+     css syntax
+       selector{
+                property/key: value;
+       }
+
+       selector - tag/element
+*/
+
+
+
+body{
+     background-color: bisque;
+}
